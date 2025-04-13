@@ -1,4 +1,3 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
 
@@ -10,16 +9,15 @@ void main() {
 
 class UberChefApp extends StatelessWidget {
   const UberChefApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'UberChef',
       debugShowCheckedModeBanner: false,
+      navigatorObservers: [routeObserver],
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      navigatorObservers: [routeObserver],
       home: const SplashScreen(),
     );
   }

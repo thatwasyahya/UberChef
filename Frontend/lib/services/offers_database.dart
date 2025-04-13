@@ -28,6 +28,7 @@ class OffersDatabase {
     const textType = 'TEXT NOT NULL';
     const intType = 'INTEGER NOT NULL';
     const doubleType = 'REAL NOT NULL';
+    const textNullable = 'TEXT';
 
     await db.execute('''
       CREATE TABLE offers (
@@ -39,7 +40,8 @@ class OffersDatabase {
         persons $intType,
         meal $textType,
         price $doubleType,
-        description $textType
+        description $textType,
+        tags $textNullable
       )
     ''');
   }
